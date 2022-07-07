@@ -1,0 +1,18 @@
+<component name="Button" extends="Group" >
+    <interface>
+        <field id="text" type="string" alwaysNotify="true" alias="buttonLabel.text" />
+        <field id="properties" type="assocArray" alwaysNotify="true" onChange="onPropertiesChange" />
+        <field id="focus" type="boolean" value="false" alwaysNotify="true" onChange="onFocusChange" />
+
+        <field id="selected" type="boolean" alwaysNotify="true" /> 
+    </interface>
+
+    <script type="text/brightscript" uri="pkg:/components/widgets/button/Button.brs" />
+
+    <children>
+        <Rectangle id="buttonContainer" >
+
+            <Label id="buttonLabel" />
+        </Rectangle>
+    </children>
+</component>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="Global" extends="Scene"> 
+<script type="text/brightscript" uri="Global.brs" />
+<children>
+</children>
+</component>

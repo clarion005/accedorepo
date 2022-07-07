@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="HelloWorld" extends="Scene">
+<script type="text/brightscript" uri="HelloWorld.brs" />
+<children>
+    <Label text="this is a label" translation="[100,100]" />
+    <Label text="this is a label created automatically with brightscript and has a very long line of text which will wrap" 
+        translation="[100,150]" width="700" wrap="true" />
+    <Label text="bigger text" translation="[100,250]" font="font:LargeSystemFont" />
+    <Label text="bolder text" translation="[300,250]" font="font:LargeBoldSystemFont" />
+    <Label text="custom font text" translation="[100,300]" id="label01" />
+</children>
+</component>

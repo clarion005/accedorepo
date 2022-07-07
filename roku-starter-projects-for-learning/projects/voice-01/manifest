@@ -1,0 +1,4 @@
+# seek and start over commands enabled
+supports_etc_seek=1
+# next command enabled
+supports_etc_next=1

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="ListAndGrid" extends="Scene" initialFocus="myLabelList">
+<interface>
+  <field id="counter" type="int"/>
+</interface>
+    <children>
+      <Video id="videoPlayer" />
+      <LabelList id="myLabelList" itemSize = "[100,100]" />
+      <Poster id="displayPoster" uri="https://picsum.photos/400" translation="[500,0]" />
+    </children>
+    <script type="text/brightscript">
+    <![CDATA[
+      function init()
+        print "initialise list-and-grid"
+        m.list = m.top.findNode("myLabelList")
+        m.top.translation = [ 100,100 ]
+        m.top.counter=0
+        m.content = createObject("RoSGNode","ContentNode")
+        addSection()
+        addListItem("one")
+        addListItem("two")
+        addListItem("three")
+        addSection()
+        addListItem("four")
+        addListItem("five")
+        addListItem("six")
+        m.list.content = m.content
+        video=m.top.findNode("videoPlayer")
+        video.visible = false
+        m.top.setFocus(true)
+      end function
+      sub addSection()
+        m.section = m.content.createChild("ContentNode")
+        m.section.CONTENTTYPE="SECTION"
+      end sub
+      sub addListItem(itemText as string)
+        item=m.section.createChild("ContentNode")
+        item.title=itemText
+      end sub
+      function onKeyEvent(key as String, press as Boolean) as Boolean
+        handled = false
+        if (press) then
+          print "key was pressed"
+          m.list = m.top.findNode("myLabelList")
+          m.picture=m.top.findNode("displayPoster")
+          if ((key = "left") or (key = "right")) then
+            print "changing picture"
+            counter=m.top.counter
+            counter++
+            m.picture.uri="https://picsum.photos/400?random=" + counter.tostr()
+            m.top.counter=counter
+            handled=true
+          end if 
+          if (key = "OK") then 
+            print "OK was pressed so swapping focus"
+            if(m.list.hasFocus()) then
+              print "setting focus to picture"
+              m.picture.setFocus(true)  
+            else 
+              print "about to try to play the video"
+              playVideo()
+            end if  
+            handled=true
+          end if 
+        end if 
+        return handled
+      end function
+      function playVideo()
+        print "playing a video"
+        videoContent = createObject("RoSGNode","ContentNode")
+        videoContent.title="Test Video on Phil TV"
+        videoContent.streamformat = "hls"
+        videoContent.url = "https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8"
+        m.video=m.top.findNode("videoPlayer")
+        m.video.content=videoContent
+        'm.video.translation="[0.0]"
+        'm.video.width=0.0
+        'm.video.height=0.0
+        'm.video.enableUI=true
+        m.list.visible=false
+        m.picture.visible=false
+        m.top.appendChild(m.video)
+        m.video.visible=true
+        m.video.setFocus(true)
+        m.video.control="play"
+      end function
+    ]]>
+    </script>
+</component>

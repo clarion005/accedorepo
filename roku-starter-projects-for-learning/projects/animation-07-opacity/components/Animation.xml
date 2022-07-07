@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="animationfloat" extends="Group" >
+<script type="text/brightscript" uri="Animation.brs" />
+<children>
+    <Poster  id="testPoster"  uri="https://www.theuiaa.org/wp-content/uploads/2017/12/2018_banner.jpg"  width="0.0"  height="0.0"  translation="[160,8]"  opacity="0.0" />
+    <Animation   id="testAnimation"  duration="10"  repeat="true"  control="start"  easeFunction="linear" >
+        <FloatFieldInterpolator    id = "testFloat"   key="[0.0, 0.5, 0.7,0.75,0.8, 1.0]"    keyValue="[ 1.0, 0.0, 0.5,1.0,0.5, 1.0 ]"       fieldToInterp="testPoster.opacity"   />
+    </Animation>
+</children>
+</component>

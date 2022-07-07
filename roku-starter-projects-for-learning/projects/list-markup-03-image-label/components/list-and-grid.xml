@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="ListAndGrid" extends="Scene" initialFocus="markup-list">
+    <script type="text/brightscript">
+    <![CDATA[
+    sub init()
+        list=m.top.findNode("markup-list")
+        list.content=CreateObject("roSGNode","MarkupListContent")
+        list.translation=[50,50]
+        m.top.setFocus(true)
+    end sub
+    ]]>
+    </script>
+    <children>
+        <MarkupList id="markup-list" itemComponentName="MarkupListItem" />
+    </children>
+</component>

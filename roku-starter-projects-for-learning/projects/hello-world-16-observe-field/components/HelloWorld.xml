@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="HelloWorld" extends="Scene" initialFocus="exampleButtonGroup">
+<script type="text/brightscript" uri="HelloWorld.brs" />
+<children>
+  <Label text="label list in xml" translation="[100,100]" />
+  <LabelList id="label-list-01" translation="[100,150}" itemSize="[440,48]">
+    <ContentNode role="content">
+        <ContentNode title="Accedo TV" />
+        <ContentNode title="Movies" />
+        <ContentNode title="Catch Up" />
+        <ContentNode title="Sports" />
+        <ContentNode title="News" />
+        <ContentNode title="Watch Later" />
+    </ContentNode>
+  </LabelList>
+</children>
+</component>

@@ -1,0 +1,12 @@
+<?xml version = "1.0" encoding = "utf-8" ?> 
+<component name = "ButtonGroupExample" extends = "Scene" initialFocus = "exampleButtonGroup" >
+  <script type = "text/brightscript" uri = "buttongroupscene.brs">
+
+  </script>
+  <children>
+    <ButtonGroup id = "exampleButtonGroup" />
+ 		<Poster translation="[300, 500]">
+			<Label id="posterLabel" text="This is a label" />
+		</Poster>
+  </children>
+</component>

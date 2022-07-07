@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="ListAndGrid" extends="Scene" initialFocus="myLabelList">
+    <children>
+        <LabelList id="myLabelList" itemSize = "[100,100]" >
+        </LabelList>
+    </children>
+    <script type="text/brightscript">
+    <![CDATA[
+      function init()
+        print "initialise list-and-grid"
+        m.list = m.top.findNode("myLabelList")
+        m.top.translation = [ 100,100 ]
+        m.content = createObject("RoSGNode","ContentNode")
+        addSection()
+        addListItem("one")
+        addListItem("two")
+        addListItem("three")
+        addSection()
+        addListItem("four")
+        addListItem("five")
+        addListItem("six")
+        m.list.content = m.content
+        m.top.setFocus(true)
+      end function
+      sub addSection()
+        m.section = m.content.createChild("ContentNode")
+        m.section.CONTENTTYPE="SECTION"
+      end sub
+      sub addListItem(itemText as string)
+        item=m.section.createChild("ContentNode")
+        item.title=itemText
+      end sub
+    ]]>
+    </script>
+</component>

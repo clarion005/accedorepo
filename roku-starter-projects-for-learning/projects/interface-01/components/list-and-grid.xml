@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="ListAndGrid" extends="Scene" initialFocus="myLabelList">
+<interface>
+  <field id="counter" type="int"/>
+</interface>
+    <children>
+      <LabelList id="myLabelList" itemSize = "[100,100]" />
+      <Poster id="displayPoster" uri="https://picsum.photos/400" translation="[500,0]" />
+    </children>
+    <script type="text/brightscript">
+    <![CDATA[
+      function init()
+        print "initialise list-and-grid"
+        m.list = m.top.findNode("myLabelList")
+        m.top.translation = [ 100,100 ]
+        m.top.counter=0
+        m.content = createObject("RoSGNode","ContentNode")
+        addSection()
+        addListItem("one")
+        addListItem("two")
+        addListItem("three")
+        addSection()
+        addListItem("four")
+        addListItem("five")
+        addListItem("six")
+        m.list.content = m.content
+        m.top.setFocus(true)
+      end function
+      sub addSection()
+        m.section = m.content.createChild("ContentNode")
+        m.section.CONTENTTYPE="SECTION"
+      end sub
+      sub addListItem(itemText as string)
+        item=m.section.createChild("ContentNode")
+        item.title=itemText
+      end sub
+      function onKeyEvent(key as String, press as Boolean) as Boolean
+        handled = false
+        if (press) then
+          print "key was pressed"
+          if ((key = "left") or (key = "right")) then
+            print "changing focus"
+            m.picture=m.top.findNode("displayPoster")
+            counter=m.top.counter
+            counter++
+            m.picture.uri="https://picsum.photos/400?random=" + counter.tostr()
+            m.top.counter=counter
+          end if 
+        end if 
+        return handled
+      end function
+    ]]>
+    </script>
+</component>

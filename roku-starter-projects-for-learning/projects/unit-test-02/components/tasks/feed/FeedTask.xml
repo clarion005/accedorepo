@@ -1,0 +1,7 @@
+<component name="FeedTask" extends="Task" >
+    <interface>
+        <field id="response" type="string" alwaysNotify="true" />
+    </interface>
+
+    <script type="text/brightscript" uri="pkg:/components/tasks/feed/FeedTask.brs" />
+</component>

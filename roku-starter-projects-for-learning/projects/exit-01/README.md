@@ -1,0 +1,1 @@
+This app exits when the 'replay' button is fired

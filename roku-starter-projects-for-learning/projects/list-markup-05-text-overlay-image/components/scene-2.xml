@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="Scene2" extends="group" >
+<script type="text/brightscript">
+<![CDATA[
+sub init()
+    print "in screen 2"
+    m.mylabel = m.top.findNode("myAmazingLabel")
+end sub
+]]>
+</script>   
+<children>
+    <Label text="a label" translation="[400,400]" id="myAmazingLabel" />
+</children>
+</component>

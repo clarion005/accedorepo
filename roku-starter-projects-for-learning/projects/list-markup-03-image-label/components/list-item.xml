@@ -1,0 +1,14 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+<component name="MarkupListItem" extends="Group">
+<script type="text/brightscript">
+<![CDATA[
+sub init()
+    
+end sub
+]]>
+</script>
+<children>
+    <Label text="this is a label11"  />
+    <Poster uri="https://picsum.photos/50" translation="[180,0]" />
+</children>
+</component>

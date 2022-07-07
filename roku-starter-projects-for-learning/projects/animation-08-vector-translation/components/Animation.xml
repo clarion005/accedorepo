@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="AnimationTranslation" extends="Group" >
+<script type="text/brightscript" uri="Animation.brs" />
+<children>
+      <Label
+        id="testLabel"
+        height="44"
+        width="0"
+        font="font:MediumBoldSystemFont"
+        text = "Application Development Made Easy!"
+        horizAlign = "left"
+        vertAlign = "center"
+        translation="[318,8]" />
+
+        <Animation
+            id="testAnimation"
+            duration="10"
+            repeat="true"
+            control="start"
+            easeFunction="linear">
+            <Vector2DFieldInterpolator
+                id = "testVector2D"
+                key="[0.0, 0.2, 0.3, 0.4, 0.5, 0.75, 1.0]"
+                keyValue="[ [318.0, 8.0], [656.0, 8.0], [318.0, 8.0], [318.0, 300.0], [0.0, 500.0], [318.0, 300.0], [318.0, 8.0] ]"
+                fieldToInterp="testLabel.translation"   />
+        </Animation>
+</children>
+</component>

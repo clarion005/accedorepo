@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="Rectangle01" extends="Scene"> 
+	<children>
+    <Overhang translation="[60,60]" color="0x232323ff"  backgroundUri="https://www.paperstreet.com/blog/wp-content/uploads/2016/04/iStock_000080733521_Double-768x513.jpg" title="Overhang Title" titleColor="0x1659de" showOptions="true" optionsText="some options" optionsAvailable="true"  /> 
+    <Label id="Label1"  text="1" width="800"  height="100"  horizAlign="center" vertAlign="center" translation="[100,200]" />
+    <Label id="Label2"  text="2" width="800"  height="100"  horizAlign="center" vertAlign="center" translation="[200,300]" />
+    <Label id="Label3"  text="3" width="800"  height="100"  horizAlign="center" vertAlign="center" translation="[300,400]" />
+	</children>
+<script type="text/brightscript" >
+<![CDATA[
+  function init()
+    m.top.setFocus(true)
+    m.myLabel = m.top.findNode("Label1")
+    m.myLabel.font.size=20
+    m.myLabel.color="0xCCCCCC"
+  end function
+  function onKeyEvent(key as String, press as Boolean) as Boolean
+    m.Label1 = m.top.findNode("Label1")
+    m.Label2 = m.top.findNode("Label2")
+    m.Label3 = m.top.findNode("Label3")
+    if (key = "up") then 
+      m.Label1.visible = true
+      m.Label2.visible = false
+      m.Label3.visible = false
+      m.Label1.text = m.Label1.text + " and more"
+      Print "you clicked up"
+    elseif (key = "down") then 
+        m.Label1.visible = false
+        m.Label2.visible = true
+        m.Label3.visible = false
+        m.Label2.text = m.Label2.text + " and more"
+        Print "you clicked down"
+    elseif (key = "right") then 
+        m.Label1.visible = false
+        m.Label2.visible = false
+        m.Label3.visible = true
+        m.Label3.text = m.Label3.text + " and more"
+        Print "you clicked right"
+    end if
+    return true
+  end function
+]]>
+</script>
+</component>

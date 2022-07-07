@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="CustomComponent" extends="Group"> 
+<script type="text/brightscript" uri="CustomComponent.brs" />
+<children>
+    <Label id="label02" text="label 02 in custom component" translation="[100,200]" />
+</children>
+</component>

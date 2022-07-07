@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="ListMarkupView" extends="Scene"> 
+<script type="text/brightscript" uri="ListMarkup.brs" />
+<children>
+<Label text="this is a label" id="label" />
+</children>
+</component>

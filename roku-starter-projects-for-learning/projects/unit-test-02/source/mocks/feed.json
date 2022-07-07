@@ -1,0 +1,41 @@
+[
+  {
+    "title": "Bake Off: The Professionals",
+    "type": "MST",
+    "summary": "Teams of professional pastry chefs do battle in the kitchen",
+    "image": {
+      "href": "https://ic.c4assets.com/bips/collections/4A6735F0-B8B2-4f90-8a9c-7a7360e17a22.jpg?interpolation=progressive-bicubic&output-quality=90&output-format=jpeg{&resize}"
+    },
+    "stream": {
+      "href": "https://fake-stream.mp4"
+    },
+    "expires": "2030-10-05T13:00:00.000Z",
+    "ageRating": 16
+  },
+  {
+    "title": "Made in Chelsea",
+    "type": "MST",
+    "summary": "Reality series following the lives, loves and awks of SW3's bright young things",
+    "image": {
+      "href": "https://ic.c4assets.com/bips/collections/B3104A80-4426-4e8f-aec4-ea287c287dfb.jpg?interpolation=progressive-bicubic&output-quality=90&output-format=jpeg{&resize}"
+    },
+    "stream": {
+      "href": "https://fake-stream.mp4"
+    },
+    "expires": "2030-10-05T13:00:00.000Z",
+    "ageRating": 16
+  },
+  {
+    "title": "Nashville",
+    "type": "MST",
+    "summary": "Gripping drama following the tangled lives of country music stars in Nashville, Tennessee",
+    "image": {
+      "href": "https://ic.c4assets.com/bips/collections/A6F9F00C-7AE5-4d22-bac0-c5610a6168d7.jpg?interpolation=progressive-bicubic&output-quality=90&output-format=jpeg{&resize}"
+    },
+    "stream": {
+      "href": "https://fake-stream.mp4"
+    },
+    "expires": "2030-10-05T13:00:00.000Z",
+    "ageRating": 16
+  }
+]

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="Scene2" extends="group" >
+<script type="text/brightscript">
+<![CDATA[
+sub init()
+    print "displaying label"
+end sub
+function onKeyEvent(key as String, press as Boolean) as Boolean
+    handled = false
+    if (press) then
+        if (key="back") then
+            print "going back to selection screen"
+            m.mylabel.visible=false
+            m.buttongroup = m.top.findNode("button-group")
+            m.buttongroup.visible=true
+            m.buttongroup.setFocus(true)
+        end if 
+    end if
+    return handled
+end function
+]]>
+</script>   
+<children>
+    <Label text="a label" translation="[400,400]" id="myAmazingLabel" />
+</children>
+</component>

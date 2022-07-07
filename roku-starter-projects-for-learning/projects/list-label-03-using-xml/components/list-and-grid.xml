@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="ListAndGrid" extends="Scene" initialFocus="myLabelList">
+    <children>
+        <LabelList id="myLabelList" itemSize = "[100,100]" >
+            <ContentNode role="content">
+                <ContentNode title="One" />
+                <ContentNode title="Two" />
+                <ContentNode title="Three" />
+            </ContentNode>
+        </LabelList>
+    </children>
+    <script type="text/brightscript">
+    <![CDATA[
+      function init()
+        print "initialise list-and-grid"
+        m.top.setFocus(true)
+        m.myLabel = m.top.findNode("myLabelList")
+        m.top.translation = [ 100,100 ]
+      end function
+    ]]>
+    </script>
+</component>

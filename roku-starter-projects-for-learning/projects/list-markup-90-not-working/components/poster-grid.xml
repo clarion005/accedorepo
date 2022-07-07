@@ -1,0 +1,28 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+<component name="PosterGridScene" extends="group" initialFocus="poster-grid">
+<interface>
+<field id = "contenturi" type = "uri" />
+<field id = "content" type = "node" />
+</interface>
+<script type="text/brightscript">
+<![CDATA[
+sub init()
+    print "rendering poster grid"
+    m.postergrid=m.top.findNode("poster-grid")
+    m.postergrid.translation=[300,300]
+    m.readPosterGridTask=createObject("roSGNode","ContentReader")
+    m.readPosterGridTask.contenturi="http://192.168.87.44:5500/projects/list-markup-07/data/posterdata.xml"
+    m.readPosterGridTask.observeField("content","showpostergrid")
+    m.readPosterGridTask.control="RUN"
+end sub
+sub showpostergrid()
+    ' when the content field is triggered, run the background task to fetch the data
+    m.postergrid.content=m.readPosterGridTask.content
+end sub
+]]>
+</script>    
+<children>
+    <PosterGrid id="poster-grid" numColumns="2" numRows="2" basePosterSize="[500,300]" caption1NumLines="1"
+            itemSpacing="[20,20]" />
+</children>
+</component>

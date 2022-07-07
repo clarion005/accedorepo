@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="VideoPlayerNode" extends="group">
+<script type="text/brightscript">
+<![CDATA[
+sub init()
+    print "about to play a video"
+    m.videonode=m.top.findNode("video-player")
+    videocontent = createObject("RoSGNode","ContentNode")
+    videocontent.title="Phil TV Video Player"
+    videocontent.streamformat="mp4"
+    videocontent.url="https://github.com/philanderson888/data/raw/master/videos/WIN_20201207_15_19_27_Pro.mp4"
+    videocontent.streamformat = "hls"
+    videocontent.url = "https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8"
+    m.videonode.content=videoContent
+    m.videonode.setFocus(true)
+    m.videonode.visible=true
+    m.videonode.control="play"
+end sub
+function onKeyEvent(key as String, press as Boolean) as Boolean
+    handled = false
+    if (press) then
+        if (key="back") then
+           print "going back to selection screen"
+           m.videonode.control="stop"
+           m.videonode.visible=false
+           m.buttongroup = m.top.findNode("button-group")
+           m.top.setFocus(true)
+           handled=true
+        end if 
+    end if
+    return handled
+end function
+]]>
+</script>   
+<children>
+<video id="video-player" />
+</children>
+</component>

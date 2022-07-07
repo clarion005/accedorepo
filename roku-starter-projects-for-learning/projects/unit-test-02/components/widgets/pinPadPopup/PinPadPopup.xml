@@ -1,0 +1,48 @@
+<component name="PinPadPopup" extends="Group" >
+    <interface>
+        <field id="type" type="string" />
+        <field id="close" type="assocArray" alwaysNotify="true" />
+    </interface>
+
+    <script type="text/brightscript" uri="pkg:/components/widgets/pinPadPopup/PinPadPopup.brs" />
+
+    <children>
+        <Rectangle
+            id="pinPadPopupContainer"
+            translation="[420, 180]"
+            width="1080"
+            height="720"
+            color="#000000"
+            opacity="0.9" >
+
+            <Label 
+                id="pinPadPopupTitle"
+                width="1080"
+                height="42"
+                color="#ECECEC"
+                translation="[16, 16]" />
+
+            <Label 
+                id="pinPadPopupInstructions"
+                width="1080"
+                color="#ECECEC"
+                translation="[16, 102]"
+                wrap="true" />
+
+            <Button id="pinButtonOne" translation="[16, 306]" />
+            <Button id="pinButtonTwo" translation="[80, 306]" />
+            <Button id="pinButtonThree" translation="[144, 306]"/>
+            <Button id="pinButtonFour" translation="[208, 306]" />
+
+            <Button id="confirmButton" translation="[294, 318]" />
+
+            <Label 
+                id="errorMessage"
+                visible="false"
+                translation="[16, 420]"
+                color="#B00020"
+                text="An error has occured please try again!"
+                width="1080" />
+        </Rectangle>
+    </children>
+</component>

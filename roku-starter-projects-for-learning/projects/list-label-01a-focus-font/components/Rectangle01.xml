@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="Rectangle01" extends="Scene" initialFocus="exampleLabelList2" > 
+	<children>
+    <Overhang translation="[60,60]" color="0x232323ff"  backgroundUri="https://www.paperstreet.com/blog/wp-content/uploads/2016/04/iStock_000080733521_Double-768x513.jpg" title="Overhang Title" titleColor="0x1659de" showOptions="true" optionsText="some options" optionsAvailable="true"  /> 
+		<Label id="myLabel"  text="1" width="100"  height="100"  horizAlign="center" vertAlign="center" translation="[100,300]" 	/>
+    <CheckListExample />
+    <RectangleExample />
+    <LabelListExample />
+    <LabelListFocusStyleExample />
+    <LabelListFocusFontExample />
+	</children>
+<script type="text/brightscript" >
+<![CDATA[
+  function init()
+    m.top.setFocus(true)
+    m.myLabel = m.top.findNode("myLabel")
+    m.myLabel.font.size=150
+    m.myLabel.color="0xCCCCCC"
+  end function
+]]>
+</script>
+</component>

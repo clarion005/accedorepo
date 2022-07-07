@@ -1,0 +1,10 @@
+<?xml version = "1.0" encoding = "utf-8" ?> 
+<component name="MarkupListContent" extends="ContentNode">
+<children>
+  <ContentNode title="this is a label" HDPosterUrl="https://picsum.photos/50?random=1" />
+  <ContentNode title="this is also a label" HDPosterUrl="https://picsum.photos/50?random=2" />
+  <ContentNode title="and this" HDPosterUrl="https://picsum.photos/50?random=3" />
+  <ContentNode title="and also this" HDPosterUrl="https://picsum.photos/50?random=4" />
+  <ContentNode title="exit" HDPosterUrl="https://picsum.photos/50?random=5" />
+</children>
+</component>

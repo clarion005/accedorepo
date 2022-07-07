@@ -1,0 +1,10 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+<component name="PosterGridContentReader" extends="Task">
+<interface>
+    <field id = "contenturi" type = "uri" />
+    <!-- notice - don't use `on change` but instead observeField in brs -->
+    <field id = "content" type = "node" />
+    <field id="dataArray" type="stringarray" />
+</interface>
+<script type="text/brightscript" uri="PosterGridContentReader.brs" />  
+</component>

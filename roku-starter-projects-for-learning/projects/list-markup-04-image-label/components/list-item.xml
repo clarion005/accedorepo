@@ -1,0 +1,23 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+<component name="MarkupListItem" extends="Group">
+<interface>
+    <field id="itemContent" type="node" onChange="showcontent" />
+</interface>
+<script type="text/brightscript">
+<![CDATA[
+sub init()
+    m.itemlabel = m.top.findNode("itemLabel")
+    m.itemposter = m.top.findNode("itemPoster")
+end sub
+sub showcontent()
+    itemcontent=m.top.itemContent
+    m.itemlabel.text = itemcontent.title
+    m.itemposter.uri = itemcontent.HDPosterUrl
+end sub
+]]>
+</script>
+<children>
+    <Label id="itemLabel" />
+    <Poster id="itemPoster" translation="[200,0]"  />
+</children>
+</component>

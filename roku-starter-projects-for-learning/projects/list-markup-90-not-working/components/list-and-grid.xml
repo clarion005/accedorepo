@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="ListAndGrid" extends="Scene" initialFocus="button-group">
+<interface>
+    <field id="exitApp" type="boolean" value="false" />
+    <field id="listScreen" type="boolean" value="false" />
+    <field id="nextScreen" type="String" value="" />
+    <field id="buttonSelected" type="integer" />
+</interface>
+<script type="text/brightscript">
+<![CDATA[
+sub init()
+    print "initialising main screen"
+    m.list=m.top.findNode("markup-list")
+    m.list.content=CreateObject("roSGNode","MarkupListContent")
+    m.list.translation="[50,50]"
+    m.list.observeField("itemSelected","onMarkupListItemSelected")
+    m.buttongroup = m.top.findNode("button-group")
+    m.buttongroup.buttons = [ "To List", "To Grid", "Label", "Video","Exit App" ]
+    m.buttongroup.translation = [300,50]
+    m.buttongroup.ObserveField("buttonSelected","checkWhichButtonSelected")
+    m.buttongroup.setFocus(true)
+    m.list.visible=false
+    ' create new view
+    m.label = createObject("roSGNode","Scene2")
+    m.top.appendChild(m.label)
+    m.label.visible=false
+end sub
+function checkWhichButtonSelected(event)
+    print "a button was selected"
+    print event
+    button = event.GetRoSGNode()
+    content = button.content 
+    index = event.GetData()
+    print "index of button selected is" index
+    print "content of event is " content
+    print "button of event is " button
+    print "focused child button is " button.focusedChild
+    print "text of focused child is " button.focusedChild.text
+    if (button.focusedChild.text = "Exit App") then
+        m.top.exitApp = true
+    else if (button.focusedChild.text = "To List") then
+        m.list.visible=true
+        m.buttongroup.visible=false
+        m.label.visible=false
+        m.list.setFocus(true)
+    else if (button.focusedChild.text = "To Grid") then
+        print "next screen is to be the grid"
+        grid = m.top.findNode("markup-list")
+        grid.setFocus(true)
+    else if (button.focusedChild.text = "Label") then
+        print "next screen is a label"
+        m.list.visible = false
+        m.label.visible=true
+        print "new label view is " m.label
+    else if (button.focusedChild.text = "Video") then
+        print "about to play a video"
+        m.videonode = createObject("roSGNode","VideoPlayerNode")
+        m.top.appendChild(m.videonode)
+        m.videonode.setFocus(true)
+        m.videonode.visible = true
+    end if
+end function
+sub onMarkupListItemSelected()
+    print "a markup list item was selected"
+    itemIndex = m.list.itemSelected 
+    print "item index selected is " itemIndex
+    print "node selected is " m.list.content.getChild(itemIndex)
+    m.buttongroup.setFocus(true)
+end sub
+function onKeyEvent(key as String, press as Boolean) as Boolean
+    handled = false
+    if (press) then
+        if (key="replay") then
+            m.top.exitApp = true
+        end if
+        if (key = "right") then
+            m.buttongroup.visible=true
+            m.list.visible=false
+            m.buttongroup.setFocus(true)
+        end if
+        handled = true
+    end if
+    return handled
+end function
+]]>
+</script>
+<children>
+    <ButtonGroup id="button-group" />
+    <MarkupList id="markup-list" itemComponentName="MarkupListItem" itemSpacing="[0,20]" itemSize="[200,200]" />
+    <PosterGridScene />
+</children>
+</component>

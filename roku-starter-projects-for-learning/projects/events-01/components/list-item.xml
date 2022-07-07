@@ -1,0 +1,12 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+<component name="MarkupListItem" extends="Group">
+<interface>
+    <field id="itemContent" type="node" onChange="showcontent" />
+</interface>
+<script type="text/brightscript" uri = "list-item.brs"/>
+
+<children>
+    <Poster id="itemPoster" width="200.0" height="200.0" />
+    <Label id="itemLabel" translation="[80,40]" />
+</children>
+</component>

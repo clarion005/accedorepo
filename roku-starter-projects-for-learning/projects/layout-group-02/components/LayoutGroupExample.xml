@@ -1,0 +1,34 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+<component name = "LayoutGroupExample" extends = "Scene" initialFocus = "exampleButtonGroup" >
+  <script type = "text/brightscript" >
+    <![CDATA[
+    sub init()
+      examplerect = m.top.boundingRect()
+      centerx = 50
+      centery = 50
+      m.top.translation = [ centerx, centery ]
+      example = m.top.findNode("exampleButtonGroup")
+      example.buttons = [ "Hello", "From", "Phil"]
+      examplerect = example.boundingRect()
+      centerx = 100
+      centery = 450
+      example.translation = [ centerx, centery ]
+      m.layout = m.top.findNode("exampleLayoutGroup")
+      m.top.setFocus(true)
+    end sub
+    function onKeyEvent(key as String, press as Boolean) as Boolean
+      if (key = "up") then 
+        m.layout.visible = true
+      end if
+      if (key = "down") then 
+        m.layout.visible = false
+      end if
+      return true
+    end function
+    ]]>
+  </script>
+  <children >
+    <ButtonGroup id = "exampleButtonGroup" />  
+    <Colours id="Colours" />
+  </children>
+</component>

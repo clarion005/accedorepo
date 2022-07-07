@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="Rectangle01" extends="Scene"> 
+	<children>
+    <Overhang translation="[60,60]" color="0x232323ff"  backgroundUri="https://www.paperstreet.com/blog/wp-content/uploads/2016/04/iStock_000080733521_Double-768x513.jpg" title="Overhang Title" titleColor="0x1659de" showOptions="true" optionsText="some options" optionsAvailable="true"  /> 
+		<Label id="myLabel"  text="1" width="100"  height="100"  horizAlign="center" vertAlign="center" translation="[100,300]" 	/>
+    <Label id="showMeLabel"  text="Show Text" width="300"  height="100"  horizAlign="center" vertAlign="center" translation="[100,300]" />
+    <Label id="labelCounter"  text="0" width="300"  height="100"  horizAlign="center" vertAlign="center" translation="[100,500]" />
+    
+    <CheckListExample />
+    <RectangleExample />
+    <LabelListExample />
+    <LabelListFocusStyleExample />
+    <LabelListFocusFontExample />
+	</children>
+<script type="text/brightscript" >
+<![CDATA[
+  function init()
+    m.top.setFocus(true)
+    m.myLabel = m.top.findNode("myLabel")
+    m.myLabel.font.size=20
+    m.myLabel.color="0xCCCCCC"
+    labelCounter = m.top.findNode("labelCounter")
+    labelCounter.font.size=50
+    labelCounter.text="0"
+    print "here is a counter with text = " + labelCounter.text
+  end function
+  function onKeyEvent(key as String, press as Boolean) as Boolean
+    m.showMeLabel = m.top.findNode("showMeLabel")
+    if (key = "up") then 
+      m.showMeLabel.visible = true
+      m.showMeLabel.text = m.showMeLabel.text + " and more"
+      Print "you clicked up"
+    end if
+    if (key = "down") then 
+      m.showMeLabel.visible = false
+      m.showMeLabel.text = ""
+      Print "you clicked down"
+    end if
+    return true
+  end function
+]]>
+</script>
+</component>

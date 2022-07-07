@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="animationcolor" extends="Group" >
+<script type="text/brightscript" uri="Animation.brs" />
+<children>
+    <Rectangle   id="testRectangle"   color="0x0000CCFF"   width="810"   height="300"   translation="[310,100]" />
+    <Animation   id="testAnimation"  duration="10"  repeat="true"  control="start"  easeFunction="linear" >
+        <ColorFieldInterpolator id = "testColor"   key="[0.0, 0.5, 1.0]"    keyValue="[ 0x0000CCFF, 0xFFFF0FFF, 0x0000CCFF ]"       fieldToInterp="testRectangle.color"   />
+    </Animation>
+</children>
+</component>

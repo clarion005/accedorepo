@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="ListAndGrid" extends="Scene" initialFocus="button-group">
+<interface>
+    <field id="exitApp" type="boolean" value="false" />
+    <field id="listScreen" type="boolean" value="false" />
+    <field id="nextScreen" type="String" value="" />
+    <field id="buttonSelected" type="integer" />
+</interface>
+<script type="text/brightscript" uri="list-and-grid.brs" />
+    
+<children>
+    <MarkupList id="markup-list" itemComponentName="MarkupListItem" itemSpacing="[0,20]" itemSize="[200,200]" />
+    <ButtonGroup id="button-group" />
+</children>
+</component>

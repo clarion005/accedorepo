@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="ListAndGrid" extends="Scene" initialFocus="markup-list">
+<interface>
+    <field id="exitApp" type="boolean" value="false" />
+</interface>
+    <script type="text/brightscript">
+    <![CDATA[
+    sub init()
+        print "initialising the main list screen"
+        list=m.top.findNode("markup-list")
+        list.content=CreateObject("roSGNode","MarkupListContent")
+        list.translation=[50,50]
+        m.top.setFocus(true)
+    end sub
+    function onKeyEvent(key as String, press as Boolean) as Boolean
+        if (press) then
+            print "a button was pressed"
+            if(key = "replay") then
+                print "replay button was pressed"
+                m.top.exitApp = true
+            end if
+        end if 
+        return true
+    end function
+    ]]>
+    </script>
+    <children>
+        <MarkupList id="markup-list" itemComponentName="MarkupListItem" />
+    </children>
+</component>

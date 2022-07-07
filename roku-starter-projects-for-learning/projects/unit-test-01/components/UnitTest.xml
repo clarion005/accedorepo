@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Only one 'scene' component exists per application and this creates the root of the visual application -->
+<component name="UnitTest" extends="Scene"> 
+<!-- link to accompanying script file for this appliction -->
+<script type="text/brightscript" uri="UnitTest.brs" />
+<children>
+    <Label 
+        text="Hello World"
+        width="1280" 
+        height="720"  
+        horizAlign="center"
+        vertAlign="center"
+    />
+</children>
+</component>

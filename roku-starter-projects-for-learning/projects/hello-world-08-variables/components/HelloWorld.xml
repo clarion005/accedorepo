@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="HelloWorld" extends="Scene">
+<script type="text/brightscript" uri="HelloWorld.brs" />
+<children>
+    <Label text="check console output for variables" translation="[100,100]" />
+</children>
+</component>

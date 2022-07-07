@@ -1,0 +1,4 @@
+splash_screen_sd=pkg:/images/channel-4.png
+splash_screen_hd=pkg:/images/channel-4.png
+splash_color=#000000
+splash_min_time=500

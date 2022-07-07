@@ -1,0 +1,30 @@
+<component name="FeedGridItem" extends="Group" >
+    <interface>
+        <field id="itemContent" type="node" onChange="onContentChange" />
+    </interface>
+
+    <script type="text/brightscript" uri="pkg:/components/widgets/feed/FeedGridItem.brs" />
+
+    <children>
+        <Poster 
+            id="feedGridItemPoster"
+            width="318"
+            height="135" />
+
+        <Button id="feedGridItemAgeRating" translation="[282, 0]" />
+
+        <Label 
+            id="feedGridItemTitle"
+            color="#ECECEC"
+            width="318"
+            height="27"
+            translation="[0, 141]" />
+
+        <Label 
+            id="feedGridItemSummary"
+            color="#ECECEC"
+            width="318"
+            height="21"
+            translation="[0, 174]" />
+    </children>
+</component>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="HelloWorld" extends="Scene">
+<script type="text/brightscript" uri="HelloWorld.brs" />
+<children>
+    <Label id="label01" text="label in root component" translation="[100,100]" />
+    <!-- notice that before we created the xml component right here.-->
+    <!-- Now we create the same component but using brightscript only -->
+</children>
+</component>

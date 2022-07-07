@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="HelloWorld" extends="Scene" initialFocus="exampleButtonGroup">
+<script type="text/brightscript" uri="HelloWorld.brs" />
+<children>
+</children>
+</component>

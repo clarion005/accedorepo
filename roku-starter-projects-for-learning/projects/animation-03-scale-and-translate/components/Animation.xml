@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="AnimationView" extends="Group"> 
+<script type="text/brightscript" uri="Animation.brs" />
+<children>
+<Poster id="myPoster"
+    opacity="1.0"
+    uri="https://images-na.ssl-images-amazon.com/images/S/sgp-catalog-images/region_US/wb-WBCLASSICS_4-Full-Image_GalleryBackground-en-US-1599207973579._SX1080_.jpg" />
+<Animation id="scaleAnimation"
+       duration="2"
+       repeat="true"
+       easeFunction="linear" >
+    <Vector2DFieldInterpolator id = "myInterp"
+    key="[0.0, 0.25, 0.5, 0.75, 1.0]"
+    keyValue="[ [0.0, 0.0], [0.25, 0.25], [0.5, 0.5], [0.75, 0.75], [1.0, 1.0]]"
+    fieldToInterp="myPoster.scale" />
+</Animation>
+<Animation id="transAnimation"
+       duration="2"
+       repeat="true"
+       easeFunction="linear" >
+    <Vector2DFieldInterpolator id = "myInterp2"
+        key="[0.0, 1.0]"
+        keyValue="[ [640.0, 320.0], [100.0, 100.0] ]"
+    fieldToInterp="myPoster.translation" />
+</Animation>
+</children>
+</component>

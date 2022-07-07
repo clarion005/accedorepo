@@ -1,0 +1,8 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+<component name="MarkupContentReader" extends="Task">
+<interface>
+    <field id="contenturi" type="uri" />
+    <field id="itemcontent" type="node" />
+</interface>
+<script type="text/brightscript" uri="MarkupContentReader.brs" /> 
+</component>
