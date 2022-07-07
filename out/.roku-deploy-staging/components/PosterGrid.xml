@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name = "GridPanelExample" extends = "Group" initialFocus = "examplePosterGrid" />
+<interface>
+  <field id = "gridcontenturi" type = "uri" onChange = "readpostergrid" />
+</interface>
+
+<children>
+  <PosterGrid
+    id = "examplePosterGrid"
+    basePosterSize = "[ 512, 288 ]"
+    caption1NumLines = "1"
+    numColumns = "2"
+    numRows = "2"
+    itemSpacing = "[ 20, 20 ]" />
+</children>
+<script type = "text/brightscript" uri="PosterGrid.brs">

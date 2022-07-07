@@ -1,0 +1,21 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+
+<component name = "MarkupGridExample" extends = "Scene" initialFocus = "exampleMarkupGrid" >
+
+  <script type = "text/brightscript" uri = "markupgridscene.brs"/>
+
+
+
+  <children>  
+    <MarkupGrid 
+      id = "exampleMarkupGrid" 
+      translation = "[ 130, 160 ]" 
+      itemComponentName = "MarkupGridItem" 
+      numColumns = "2" 
+      numRows = "5" 
+      itemSize = "[ 532, 308 ]" 
+      itemSpacing = "[ 20, 20 ]" 
+      drawFocusFeedback = "false" />
+  </children>
+
+</component>

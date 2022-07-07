@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="MainScene" extends="Scene">
+<script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
+  <interface>
+    <field id = "hideMain" type = "boolean" alias="MainView.hideView" onChange="doSomething" />
+  </interface>
+
+<children>
+<MainView id = "MainView" visible="true" />
+<PlayerView id = "PlayerView" visible="false" />
+</children>
+
+</component>

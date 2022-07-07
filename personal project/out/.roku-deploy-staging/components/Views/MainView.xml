@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="MainView" extends="Group" initialFocus = "grid">
+<script type="text/brightscript" uri="pkg:/components/Views/MainView.brs" /> 
+
+  <interface>
+  <field id = "hideView" type = "boolean" />
+  </interface>
+
+<children>
+
+  <PosterGrid 
+      id = "grid" 
+      basePosterSize = "[ 512, 288 ]" 
+      caption1NumLines = "1" 
+      numColumns = "2" 
+      numRows = "5" 
+      itemSpacing = "[ 20, 20 ]" />
+
+</children>
+
+
+</component>

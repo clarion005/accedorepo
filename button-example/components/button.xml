@@ -1,0 +1,15 @@
+<?xml version = "1.0" encoding = "utf-8" ?> 
+
+<component name = "ButtonExample" extends = "Scene" initialFocus = "exampleButton" >
+
+<script type = "text/brightscript" uri = "button.brs" />
+
+  <children>
+    <Button
+      id = "exampleButton"
+      text = "Enter PIN "
+      showFocusFootprint = "true"
+      minWidth = "200" />
+  </children>
+
+</component>
